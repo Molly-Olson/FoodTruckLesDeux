@@ -1,0 +1,23 @@
+﻿@model FoodTruckLesDeux.ViewModels.LocationListViewModel
+
+<h1>
+	@Model.Title
+</h1>  
+<p>
+	Total Locations: <strong>@Model.TotalCount</strong>
+</p>
+
+@if (Model.Locations == null || Model.Locations.Count == 0)
+{
+	<p><em>
+			@Model.EmptyMessage
+	</em></p>
+}
+else
+{
+	@foreach (var location in Model.Locations)
+	{
+		<partial name="_LocationsCard"
+		         model="location" />
+	}
+}

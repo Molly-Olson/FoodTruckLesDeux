@@ -1,0 +1,42 @@
+﻿@model FoodTruckLesDeux.Models.CateringRequestModel
+
+<h1>Let us CATER your next big event!</h1>
+<form asp-action="Create" method="post">
+	<div asp-validation-summary="All">
+	</div>
+
+
+	<div>
+		<label asp-for="FirstName"></label>
+		<input asp-for="FirstName" />
+		<span asp-validation-for="FirstName"></span>
+	</div>
+	<div>
+		<label asp-for="LastName"></label>
+		<input asp-for="LastName" />
+		<span asp-validation-for="LastName"></span>
+	</div>
+
+	<div>
+		<label asp-for="Email"></label>
+		<input asp-for="Email" type="email" />
+		<span asp-validation-for="Email"></span>
+	</div>
+
+	<div>
+		<label asp-for="EventDate"></label>
+		<input asp-for="EventDate" type="date" />
+		<span asp-validation-for="EventDate"></span>
+	</div>
+	<div>
+		<label asp-for="NumberOfGuests"></label>
+		<input asp-for="NumberOfGuests" type="number" />
+		<span asp-validation-for="NumberOfGuests"></span>
+	</div>
+	<div>
+		<label asp-for="SpecialRequests"></label>
+		<textarea asp-for="SpecialRequests"></textarea>
+		<span asp-validation-for="SpecialRequests"></span>
+	</div>
+	<button type="submit">Submit Request</button>
+</form>

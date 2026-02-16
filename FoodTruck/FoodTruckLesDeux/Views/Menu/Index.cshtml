@@ -1,0 +1,19 @@
+﻿@model FoodTruckLesDeux.ViewModels.MenuListViewModel
+<h1>
+    @Model.Title
+</h1>
+<p>Total Menu Items: <strong>@Model.TotalCount</strong></p>
+
+@if (Model.MenuItems == null || Model.MenuItems.Count == 0)
+{
+    <p><em>@Model.EmptyMessage</em></p>
+}
+else
+{
+    
+        @foreach (var MenuItem in Model.MenuItems)
+        {
+          <partial name="_MenuItemCard" model="MenuItem" />
+        }
+    
+}
